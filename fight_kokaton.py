@@ -172,12 +172,13 @@ def main():
                 if beam.rct.colliderect(bomb.rct):
                     bomb = None
                     beam = None
+                    bird.change_img(6, screen)  # こうかとんが喜ぶエフェクト
 
         key_lst = pg.key.get_pressed()
         bird.update(key_lst, screen) 
-        if beam is not None: #ビームが存在するときだけ
+        if beam is not None:  # ビームが存在するときだけ
             beam.update(screen)  
-        if bomb is not None: #爆弾が存在するときだけ
+        if bomb is not None:  # 爆弾が存在するときだけ
             bomb.update(screen)
         pg.display.update()
         tmr += 1
